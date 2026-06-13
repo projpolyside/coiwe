@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
@@ -11,7 +12,7 @@ const geistSans = Geist({
   subsets: ['latin'],
 })
 
-const geistMono = Geist({
+const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 })
@@ -45,8 +46,13 @@ export const metadata: Metadata = {
     title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
   },
-  robots: { index: true, follow: true },
-  alternates: { canonical: '/' },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/',
+  },
 }
 
 export const viewport = {
@@ -69,6 +75,14 @@ export default function RootLayout({
         <meta
           name="google-adsense-account"
           content="ca-pub-8736297902100969"
+        />
+
+        <Script
+          id="adsense-script"
+          async
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8736297902100969"
+          crossOrigin="anonymous"
         />
       </head>
 
