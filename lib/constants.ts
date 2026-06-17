@@ -1,6 +1,6 @@
 export const SITE = {
   name: "CoinClash",
-  url: "https://coinclash.app",
+  url: "https://coiwe.vercel.app",
   tagline: "Compare Any Cryptocurrency Instantly",
   description:
     "CoinClash lets you compare any two cryptocurrencies side-by-side with live prices, market caps, performance, and supply metrics — plus clear written verdicts to help you decide.",

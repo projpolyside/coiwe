@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
@@ -49,6 +50,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/',
+  },
 }
 
 export const viewport = {
@@ -72,9 +76,10 @@ export default function RootLayout({
           name="google-adsense-account"
           content="ca-pub-8736297902100969"
         />
-
-        <script
+        <Script
+          id="adsense-script"
           async
+          strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8736297902100969"
           crossOrigin="anonymous"
         />

@@ -69,13 +69,13 @@ export default function ContactPage() {
             <div>
               <h3 className="font-semibold text-foreground">Support Email</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                support@coinclash.app
+                support@coiwe.vercel.app
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-foreground">General Inquiries</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                hello@coinclash.app
+                hello@coiwe.vercel.app
               </p>
             </div>
             <div>
