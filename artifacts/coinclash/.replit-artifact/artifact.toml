@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "CoinClash"
+version = "1.0.0"
+id = "artifacts/coinclash"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24377
+
+[services.development]
+run = "pnpm --filter @workspace/coinclash run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/coinclash", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/coinclash/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24377"
+BASE_PATH = "/"
