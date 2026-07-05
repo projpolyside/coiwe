@@ -2,29 +2,14 @@ import { Link } from "wouter"
 import { Clock, Calendar, ArrowRight } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-
-export const BLOG_POSTS = [
-  {
-    title: "How to Compare Cryptocurrencies Effectively",
-    slug: "how-to-compare-cryptocurrencies",
-    date: "July 3, 2026",
-    excerpt:
-      "A comprehensive guide to evaluating digital assets beyond price action.",
-    readTime: "8 min",
-  },
-  {
-    title: "Why Market Cap Matters in Crypto Investing",
-    slug: "why-market-cap-matters",
-    date: "July 2, 2026",
-    excerpt:
-      "Understanding total value, fully diluted valuation, and market dynamics.",
-    readTime: "7 min",
-  },
-]
+import { JsonLd } from "@/components/json-ld"
+import { generateWebsiteSchema } from "@/lib/schema"
+import { BLOG_POSTS } from "@/lib/blog-data"
 
 export function BlogPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 space-y-8">
+      <JsonLd data={generateWebsiteSchema()} />
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }]} />
 
       <SectionHeading

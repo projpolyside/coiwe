@@ -1,7 +1,9 @@
 import { useParams } from "wouter"
 import { Link } from "wouter"
 import { ArrowLeft, Clock, Calendar } from "lucide-react"
-import { BLOG_POSTS } from "./blog"
+import { BLOG_POSTS } from "@/lib/blog-data"
+import { JsonLd } from "@/components/json-ld"
+import { generateArticleSchema } from "@/lib/schema"
 
 type BlogPostContent = {
   slug: string
@@ -100,6 +102,9 @@ export function BlogPostPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 space-y-8">
+      <JsonLd
+        data={generateArticleSchema(content.title, content.date, content.intro)}
+      />
       <Link
         href="/blog"
         className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"

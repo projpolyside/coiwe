@@ -9,6 +9,10 @@ const NAV_LINKS = [
   { href: "/coins", label: "Coins" },
   { href: "/compare", label: "Compare" },
   { href: "/categories", label: "Categories" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
+  { href: "/editorial-policy", label: "Editorial Policy" },
+  { href: "/disclaimer", label: "Disclaimer" },
 ]
 
 export function SiteHeader() {
