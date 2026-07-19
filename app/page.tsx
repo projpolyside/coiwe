@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { Flame, TrendingUp, TrendingDown } from "lucide-react"
+import { BookOpen, BarChart3, ShieldCheck, Flame, TrendingUp, TrendingDown } from "lucide-react"
 import { getMarkets, getTrending } from "@/lib/coingecko/api"
 import { SITE } from "@/lib/constants"
 import { formatPrice } from "@/lib/format"
@@ -48,6 +48,70 @@ export default async function HomePage() {
       <HomeHero />
 
       <div className="mx-auto max-w-7xl space-y-16 px-4 py-16 sm:px-6 lg:px-8">
+        <section
+          aria-labelledby="compare-framework-heading"
+          className="rounded-2xl border border-border bg-card/70 p-6 sm:p-8"
+        >
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+            <div className="max-w-2xl">
+              <SectionHeading
+                title="How to evaluate a crypto comparison"
+                subtitle="Better crypto research looks beyond the price chart. Use market structure, liquidity, and supply data together to understand what matters."
+              />
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                CoinClash is built for readers who want context instead of hype. Compare assets with the same lens serious investors use: market cap, trading volume, supply, momentum, and drawdowns.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-background/80 p-4 sm:min-w-[280px]">
+              <p className="text-sm font-semibold text-foreground">
+                Start with questions like:
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                <li>• Is this asset growing because of real demand or speculation?</li>
+                <li>• How much dilution risk is already built into the supply?</li>
+                <li>• Does the recent momentum look sustainable or fragile?</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                icon: <BarChart3 className="h-5 w-5" />,
+                title: "Compare the right metrics",
+                description:
+                  "See price, market cap, volume, and recent performance side-by-side so the comparison stays grounded in fundamentals.",
+              },
+              {
+                icon: <BookOpen className="h-5 w-5" />,
+                title: "Understand the narrative",
+                description:
+                  "Each comparison is paired with clear context so you can interpret the numbers without relying on social media noise.",
+              },
+              {
+                icon: <ShieldCheck className="h-5 w-5" />,
+                title: "Spot risk early",
+                description:
+                  "Watch supply dilution, volatility, and drawdowns to judge whether a recent move looks healthy or overextended.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-border bg-background/70 p-5"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  {item.icon}
+                </div>
+                <h3 className="mt-4 font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section aria-labelledby="popular-heading">
           <div id="popular-heading">
             <SectionHeading

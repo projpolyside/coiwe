@@ -26,6 +26,17 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
   const insight = MARKET_INSIGHTS.find((i) => insightSlug(i.title) === slug)
   if (!insight) notFound()
 
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: insight.title,
+    description: insight.excerpt,
+    author: { "@type": "Organization", name: "CoinClash" },
+    publisher: { "@type": "Organization", name: "CoinClash" },
+    articleSection: insight.category,
+    wordCount: insight.body.join(" ").split(" ").length,
+  }
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 space-y-8">
       <Link
@@ -37,6 +48,10 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
       </Link>
 
       <article className="rounded-2xl border border-border bg-card p-6 md:p-10 space-y-6">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
         <div className="flex items-center gap-3 text-xs text-muted-foreground">
           <span className="rounded-md bg-secondary px-2 py-0.5 font-medium text-foreground">
             {insight.category}

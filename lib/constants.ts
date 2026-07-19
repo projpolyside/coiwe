@@ -3,7 +3,7 @@ export const SITE = {
   url: "https://coiwe.vercel.app",
   tagline: "Compare Any Cryptocurrency Instantly",
   description:
-    "CoinClash lets you compare any two cryptocurrencies side-by-side with live prices, market caps, performance, and supply metrics — plus clear written verdicts to help you decide.",
+    "CoinClash helps readers compare cryptocurrencies with live prices, market caps, trading volume, supply data, and performance context so they can understand the market more clearly.",
 }
 
 export const POPULAR_COMPARISONS: { a: string; b: string; aName: string; bName: string }[] = [

@@ -39,6 +39,7 @@ export function SiteFooter() {
                 { href: "/categories", label: "Categories" },
                 { href: "/about", label: "About" },
                 { href: "/contact", label: "Contact" },
+                { href: "/advertise", label: "Advertise" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link

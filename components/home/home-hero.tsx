@@ -15,8 +15,11 @@ export function HomeHero() {
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
             Compare prices, market caps, performance, supply metrics, and key
-            statistics side-by-side — with clear written verdicts that help you
-            make sense of the numbers.
+            statistics side-by-side — with clear written context that helps you
+            understand what is driving the market, not just what is moving.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            Start with a practical comparison like Bitcoin vs Ethereum, Solana vs Sui, or any newer token you are researching, and use the same framework to evaluate risk, dilution, and momentum.
           </p>
           <div className="mx-auto mt-8 max-w-xl">
             <SearchBar
