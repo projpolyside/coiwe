@@ -94,6 +94,14 @@ export function SiteFooter() {
           <p className="mt-4 text-sm text-muted-foreground">
             © {year} {SITE.name}. All rights reserved.
           </p>
+          <a
+  href="https://www.effectivecpmnetwork.com/ni9tihpy?key=c6857f07c3e655ef14f2fb85c03b42b4"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+>
+  Discover More Crypto Opportunities
+</a>
         </div>
       </div>
     </footer>
